@@ -1,10 +1,13 @@
 <form method="post" action="">
     <input type="number" name="tinggi" placeholder="Masukkan tinggi segitiga">
-    <button type="submit">Gas!</button>
+    <button type="submit" name="submit">Gas!</button>
 </form>
 
 <?php
-if(isset($_POST['tinggi'])){
+if(isset($_POST['submit'])){
+    if($_POST['tinggi'] == null){
+        echo "<h5 style='color:red'>Bidang ini harus diisi!</h5>";
+    }
     $tinggi = $_POST['tinggi'];
 }else{
     $tinggi = 0;
